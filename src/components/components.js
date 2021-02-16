@@ -1,10 +1,10 @@
 import Page from './page'
-import Teaser from './teaser'
+import Story from './story'
 import ComponentNotFound from './component_not_found'
 
 const ComponentList = {
   page: Page,
-  teaser: Teaser,
+  story: Story
 }
 
 const Components = (type) => {

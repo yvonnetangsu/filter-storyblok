@@ -9,7 +9,7 @@ exports.createPages = ({ graphql, actions }) => {
     resolve(
       graphql(
         `{
-          stories: allStoryblokEntry {
+          allStoryblokEntry {
             edges {
               node {
                 id
@@ -30,7 +30,7 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        const entries = result.data.stories.edges
+        const entries = result.data.allStoryblokEntry.edges
 
         entries.forEach((entry, index) => {
           let slug = `${entry.node.full_slug}`
@@ -59,3 +59,19 @@ exports.createPages = ({ graphql, actions }) => {
     )
   })
 }
+
+// Alter Gatsby's webpack config.
+exports.onCreateWebpackConfig = ({
+  stage,
+  rules,
+  loaders,
+  plugins,
+  actions,
+}) => {
+  actions.setWebpackConfig({
+    node: {
+      fs: "empty"
+    }
+  })
+}
+

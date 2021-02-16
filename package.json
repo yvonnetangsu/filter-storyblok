@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-storyblok-boilerplate",
-  "description": "Gatsby Storyblok starter",
-  "version": "1.0.0",
-  "author": "Alexander Feiglstorfer <delooks@gmail.com>",
+  "name": "filter-storyblok",
+  "description": "Testing Filtering in Storyblok",
+  "version": "0.1.0",
+  "author": "Yvonne Tang",
   "dependencies": {
     "gatsby": "^2.31.1",
     "gatsby-plugin-anchor-links": "^1.2.0",
@@ -17,6 +17,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-helmet": "^6.1.0",
+    "react-loader-spinner": "^3.1.14",
     "sanitize-html": "^1.27.5",
     "storyblok-react": "^0.1.2"
   },
