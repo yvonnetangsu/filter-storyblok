@@ -4,12 +4,12 @@ exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
 
   return new Promise((resolve, reject) => {
-    const storyblokEntry = path.resolve('src/templates/blog-entry.js')
+    const storyblokEntry = path.resolve('src/templates/storyblok-entry.js')
 
     resolve(
       graphql(
         `{
-          allStoryblokEntry {
+          stories: allStoryblokEntry {
             edges {
               node {
                 id
@@ -20,6 +20,9 @@ exports.createPages = ({ graphql, actions }) => {
                 field_component
                 full_slug
                 content
+                is_startpage
+                parent_id
+                group_id
               }
             }
           }
@@ -30,7 +33,7 @@ exports.createPages = ({ graphql, actions }) => {
           reject(result.errors)
         }
 
-        const entries = result.data.allStoryblokEntry.edges
+        const entries = result.data.stories.edges
 
         entries.forEach((entry, index) => {
           let slug = `${entry.node.full_slug}`
@@ -74,4 +77,3 @@ exports.onCreateWebpackConfig = ({
     }
   })
 }
-

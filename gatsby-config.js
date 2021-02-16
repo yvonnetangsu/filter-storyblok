@@ -50,7 +50,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Make a Gift`,
+        name: `Test`,
         start_url: `/`,
         include_favicon: false,
         crossOrigin: `use-credentials`,

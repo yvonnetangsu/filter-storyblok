@@ -94,6 +94,12 @@ class StoryblokEntry extends React.Component {
         payload.story.content = sb.addComments(payload.story.content, payload.story.id)
         sb.resolveRelations(payload.story, sbConfig.options.resolveRelations ||
           [
+            'oodQuoteSlider.quotes',
+            'globalFooterPicker.globalFooter',
+            'localFooterPicker.localFooter',
+            'localHeaderPicker.localHeader',
+            'contentMenuPicker.contentMenu',
+            'storyPicker.story',
           ],
           () => {
           this.setState({story: payload.story})
@@ -110,7 +116,7 @@ class StoryblokEntry extends React.Component {
 
   render() {
 
-    if (this.state.bad == true) {
+    if (this.state.bad === true) {
       return (
         <div className="centered-container">
           <h1>Error</h1>
